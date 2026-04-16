@@ -7,7 +7,10 @@
 
 # ----- export section -----
 export EDITOR=nvim
-export BASH_ENV=~/.bash_aliases
+if [ -f ~/.bash_aliases ]; then
+    export BASH_ENV=~/.bash_aliases
+    source ~/.bash_aliases
+fi
 
 # ----- alias section -----
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
