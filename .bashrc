@@ -14,7 +14,9 @@ fi
 
 # ----- alias section -----
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias work-dotfiles='git --git-dir=$HOME/.work-dotfiles/ --work-tree=$HOME'
 alias lgdf='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias lgwdf='lazygit --git-dir=$HOME/.work-dotfiles/ --work-tree=$HOME'
 alias sudo='sudo '
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
