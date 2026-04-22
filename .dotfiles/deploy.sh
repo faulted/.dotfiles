@@ -1,7 +1,12 @@
-# ~/.dotfiles/deploy.sh
+#!/bin/bash
 
-PROFILE=${1:-personal}
+PROFILE=$1
 DOTFILES_DIR="$HOME/.dotfiles"
+
+if [[ "$PROFILE" != "work" && "$PROFILE" != "personal" ]]; then
+  echo "Usage: deploy.sh [work|personal]"
+  exit 1
+fi
 
 # Files shared between both profiles
 SHARED=(
