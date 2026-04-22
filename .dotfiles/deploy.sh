@@ -17,7 +17,6 @@ SHARED=(
 # Personal-only files
 PERSONAL_ONLY=(
   ".bashrc"
-  ".bash_aliases"
   ".config/ghostty/config.ghostty"
   ".config/yazi/yazi.toml"
 )
