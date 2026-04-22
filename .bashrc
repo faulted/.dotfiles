@@ -5,13 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# ----- export section -----
-export EDITOR=nvim
-if [ -f ~/.bash_aliases ]; then
-    export BASH_ENV=~/.bash_aliases
-    source ~/.bash_aliases
-fi
-
 # ----- alias section -----
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias work-dotfiles='git --git-dir=$HOME/.work-dotfiles/ --work-tree=$HOME'
@@ -22,6 +15,8 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fud='flatpak update'
 alias ff='fastfetch'
+alias nv='nvim'
+alias lg='lazygit'
 alias fnv='fd --type f --hidden --exclude "timeshift" 2>/dev/null | fzf --preview="bat --color=always {}" | xargs -r nvim'
 alias fcd='cd "$(fd --type d --hidden --exclude "timeshift" 2>/dev/null | fzf --preview="ls -al {}")"'
 
