@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# ----- export section -----
+export EDITOR=nvim
+
 # ----- alias section -----
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias work-dotfiles='git --git-dir=$HOME/.work-dotfiles/ --work-tree=$HOME'
