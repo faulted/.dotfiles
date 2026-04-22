@@ -5,6 +5,18 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# ----- setup bash prompt -----
+
+git_branch() {
+  local branch=$(git branch --show-current 2>/dev/null)
+  [ -n "$branch" ] && echo "(${branch}) "
+}
+PS1='\[\e[38;2;150;152;150m\]\T\[\e[0m\] > '   # time
+PS1+='\[\e[38;2;204;102;102m\]\u\[\e[0m\] '     # user
+PS1+='[\[\e[38;2;240;198;116m\]\w\[\e[0m\]] '   # dir
+PS1+='\[\e[38;2;181;189;104m\]$(git_branch)\[\e[0m\]'  # branch
+PS1+='\[\e[38;2;129;162;190m\]\$\[\e[0m\] '     # dollar
+
 # ----- export section -----
 export EDITOR=nvim
 
@@ -214,5 +226,3 @@ fi
 # To initialize zoxide, add this to your shell configuration file (usually ~/.bashrc):
 #
 # eval "$(zoxide init bash)"
-
-eval "$(starship init bash)"
