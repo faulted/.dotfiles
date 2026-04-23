@@ -34,14 +34,8 @@ return {
                 jedi_symbols = { enabled = true, all_scopes = true },
                 jedi_type_definition = { enabled = true },
 
-
-                -- Linting: pylint
-                pylint = {
-                    enabled = true,
-                    args = {},
-                },
-
                 -- Disable everything we're not using
+                pylint = { enabled = false },
                 mccabe = { enabled = false },
                 preload = { enabled = false},
                 pycodestyle = { enabled = false },
