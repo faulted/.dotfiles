@@ -8,14 +8,21 @@ return {
         local actions = require('telescope.actions')
 
         require('telescope').setup {
-            defaults = {
-                mappings = {
-                    i = { ["<C-d>"] = actions.delete_buffer },
-                    n = {
-                        ["<C-d>"] = actions.delete_buffer,
-                        ["dd"]    = actions.delete_buffer,
+            pickers = {
+                buffers = {
+                    mappings = {
+                        i = { ["<C-d>"] = actions.delete_buffer },
+                        n = {
+                            ["<C-d>"] = actions.delete_buffer,
+                            ["dd"]    = actions.delete_buffer,
+                        },
                     },
                 },
+                live_grep = {
+                    additional_args = function ()
+                       return { "-i" }
+                    end
+                }
             },
         }
 
