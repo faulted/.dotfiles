@@ -3,7 +3,8 @@
 -- Configuration found below:
 -- https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
 
-vim.lsp.config('pylsp', {
+---@type vim.lsp.Config
+return {
     settings = {
         pylsp = {
             configurationSources = { 'flake8' },

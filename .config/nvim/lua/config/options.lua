@@ -35,3 +35,4 @@ vim.opt.autochdir = false -- do not autochange directories
 vim.opt.iskeyword:append("-") -- include - in words
 vim.opt.path:append("**") -- include subdirs in search
 vim.opt.clipboard:append("unnamedplus") -- set neovim to use the + register by default
+vim.opt.signcolumn = "yes" -- alwyas show the sign column
