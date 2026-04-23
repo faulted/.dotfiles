@@ -11,6 +11,7 @@ fi
 # Files shared between both profiles
 SHARED=(
   ".config/nvim"
+  ".config/kitty"
   ".tmux.conf"
 )
 
