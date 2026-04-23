@@ -11,7 +11,6 @@ fi
 # Files shared between both profiles
 SHARED=(
   ".config/nvim"
-  ".config/kitty"
   ".tmux.conf"
 )
 
@@ -26,6 +25,19 @@ link_file() {
   local src="$DOTFILES_DIR/$1"
   local dest="$HOME/$1"
   mkdir -p "$(dirname "$dest")"
+
+  if [[ -e "$dest" && ! -L "$dest" ]]; then
+    read -rp "Warning: $dest already exists. Back it up? [y/n] " answer
+    if [[ "$answer" == "y" ]]; then
+      mv "$dest" "$dest.bak"
+      echo "Backed up $dest to $dest.bak"
+    else
+      echo "Skipping $1"
+      return
+    fi
+  fi
+
+  rm -rf "$dest"
   ln -sf "$src" "$dest"
   echo "Linked $1"
 }
